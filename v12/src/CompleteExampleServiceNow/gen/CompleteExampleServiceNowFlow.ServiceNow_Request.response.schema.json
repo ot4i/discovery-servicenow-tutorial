@@ -1,0 +1,436 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "items": {
+    "type": "object",
+    "properties": {
+      "parent": {
+        "displayOrder": 13,
+        "title": "Parent",
+        "type": "string"
+      },
+      "skip_sync": {
+        "displayOrder": 58,
+        "title": "Skip sync",
+        "type": "boolean"
+      },
+      "residual_date": {
+        "displayOrder": 39,
+        "title": "Residual date",
+        "type": "string",
+        "format": "date-time"
+      },
+      "residual": {
+        "displayOrder": 40,
+        "title": "Residual value",
+        "type": "string"
+      },
+      "sys_updated_on": {
+        "displayOrder": 51,
+        "title": "Updated",
+        "type": "string",
+        "format": "date-time"
+      },
+      "request_line": {
+        "displayOrder": 23,
+        "title": "Request line",
+        "type": "string"
+      },
+      "sys_updated_by": {
+        "displayOrder": 52,
+        "title": "Updated by",
+        "type": "string"
+      },
+      "due_in": {
+        "displayOrder": 59,
+        "title": "Due in",
+        "enum": [
+          "1 Day",
+          "1 Hour",
+          "1 Week"
+        ],
+        "type": "string"
+      },
+      "model_category": {
+        "displayOrder": 2,
+        "title": "Model category",
+        "type": "string"
+      },
+      "sys_created_on": {
+        "displayOrder": 53,
+        "title": "Created",
+        "type": "string",
+        "format": "date-time"
+      },
+      "sys_domain": {
+        "displayOrder": 71,
+        "title": "Domain",
+        "type": "string"
+      },
+      "disposal_reason": {
+        "displayOrder": 31,
+        "title": "Disposal reason",
+        "type": "string"
+      },
+      "model": {
+        "displayOrder": 3,
+        "title": "Model",
+        "type": "string"
+      },
+      "install_date": {
+        "displayOrder": 21,
+        "title": "Installed",
+        "type": "string",
+        "format": "date-time"
+      },
+      "invoice_number": {
+        "displayOrder": 24,
+        "title": "Invoice number",
+        "type": "string"
+      },
+      "gl_account": {
+        "displayOrder": 27,
+        "title": "GL account",
+        "type": "string"
+      },
+      "sys_created_by": {
+        "displayOrder": 54,
+        "title": "Created by",
+        "type": "string"
+      },
+      "warranty_expiration": {
+        "displayOrder": 43,
+        "title": "Warranty expiration",
+        "type": "string",
+        "format": "date-time"
+      },
+      "asset_tag": {
+        "displayOrder": 6,
+        "title": "Asset tag",
+        "type": "string"
+      },
+      "depreciated_amount": {
+        "displayOrder": 41,
+        "title": "Depreciated amount",
+        "type": "string"
+      },
+      "substatus": {
+        "displayOrder": 60,
+        "title": "Substatus",
+        "enum": [
+          "available",
+          "disposed",
+          "lost",
+          "reserved",
+          "sold",
+          "stolen",
+          "defective",
+          "donated",
+          "pending_install",
+          "pending_repair",
+          "vendor_credit",
+          "pending_disposal",
+          "pre_allocated",
+          "pending_transfer"
+        ],
+        "type": "string"
+      },
+      "pre_allocated": {
+        "displayOrder": 61,
+        "title": "Pre-allocated",
+        "type": "boolean"
+      },
+      "owned_by": {
+        "displayOrder": 12,
+        "title": "Owned by",
+        "type": "string"
+      },
+      "checked_out": {
+        "displayOrder": 62,
+        "title": "Checked out",
+        "type": "string",
+        "format": "date-time"
+      },
+      "display_name": {
+        "displayOrder": 1,
+        "title": "Display name",
+        "display": {
+          "nameProperty": true
+        },
+        "type": "string"
+      },
+      "sys_domain_path": {
+        "displayOrder": 55,
+        "title": "Domain Path",
+        "type": "string"
+      },
+      "asset_function": {
+        "displayOrder": 27,
+        "title": "Asset function",
+        "enum": [
+          "primary",
+          "secondary",
+          "shared"
+        ],
+        "type": "string"
+      },
+      "delivery_date": {
+        "displayOrder": 63,
+        "title": "Order received",
+        "type": "string",
+        "format": "date-time"
+      },
+      "retirement_date": {
+        "displayOrder": 34,
+        "title": "Scheduled retirement",
+        "type": "string",
+        "format": "date-time"
+      },
+      "install_status": {
+        "displayOrder": 7,
+        "title": "Install status",
+        "enum": [
+          2,
+          6,
+          9,
+          1,
+          10,
+          3,
+          7,
+          8,
+          11
+        ],
+        "type": "number"
+      },
+      "beneficiary": {
+        "displayOrder": 32,
+        "title": "Beneficiary",
+        "type": "string"
+      },
+      "cost_center": {
+        "displayOrder": 28,
+        "title": "Cost center",
+        "type": "string"
+      },
+      "supported_by": {
+        "displayOrder": 45,
+        "title": "Supported by",
+        "type": "string"
+      },
+      "assigned": {
+        "displayOrder": 20,
+        "title": "Assigned",
+        "type": "string",
+        "format": "date-time"
+      },
+      "life_cycle_stage": {
+        "displayOrder": 35,
+        "title": "Life Cycle Stage",
+        "type": "string"
+      },
+      "purchase_date": {
+        "displayOrder": 64,
+        "title": "Purchased",
+        "type": "string",
+        "format": "date-time"
+      },
+      "work_notes": {
+        "displayOrder": 46,
+        "title": "Work notes",
+        "type": "string"
+      },
+      "managed_by": {
+        "displayOrder": 11,
+        "title": "Managed by",
+        "type": "string"
+      },
+      "sys_class_name": {
+        "displayOrder": 14,
+        "title": "Sys class name",
+        "type": "string"
+      },
+      "sys_id": {
+        "displayOrder": 50,
+        "title": "Sys ID",
+        "type": "string"
+      },
+      "po_number": {
+        "displayOrder": 65,
+        "title": "PO number",
+        "type": "string"
+      },
+      "stockroom": {
+        "displayOrder": 16,
+        "title": "Stockroom",
+        "type": "string"
+      },
+      "checked_in": {
+        "displayOrder": 66,
+        "title": "Checked in",
+        "type": "string",
+        "format": "date-time"
+      },
+      "life_cycle_stage_status": {
+        "displayOrder": 44,
+        "title": "Life Cycle Stage Status",
+        "type": "string"
+      },
+      "vendor": {
+        "displayOrder": 26,
+        "title": "Vendor",
+        "type": "string"
+      },
+      "resale_price": {
+        "displayOrder": 33,
+        "title": "Resale price",
+        "type": "string"
+      },
+      "company": {
+        "displayOrder": 19,
+        "title": "Company",
+        "type": "string"
+      },
+      "retired": {
+        "displayOrder": 35,
+        "title": "Retired date",
+        "type": "string",
+        "format": "date-time"
+      },
+      "justification": {
+        "displayOrder": 67,
+        "title": "Justification",
+        "type": "string"
+      },
+      "department": {
+        "displayOrder": 17,
+        "title": "Department",
+        "type": "string"
+      },
+      "expenditure_type": {
+        "displayOrder": 30,
+        "title": "Expenditure type",
+        "enum": [
+          "capex",
+          "opex"
+        ],
+        "type": "string"
+      },
+      "depreciation": {
+        "displayOrder": 36,
+        "title": "Depreciation",
+        "type": "string"
+      },
+      "assigned_to": {
+        "displayOrder": 10,
+        "title": "Assigned to",
+        "type": "string"
+      },
+      "depreciation_date": {
+        "displayOrder": 37,
+        "title": "Depreciation effective date",
+        "type": "string",
+        "format": "date-time"
+      },
+      "old_status": {
+        "displayOrder": 68,
+        "title": "Old status",
+        "type": "string"
+      },
+      "cost": {
+        "displayOrder": 25,
+        "title": "Cost",
+        "type": "string"
+      },
+      "comments": {
+        "displayOrder": 22,
+        "title": "Comments",
+        "type": "string"
+      },
+      "quantity": {
+        "displayOrder": 5,
+        "title": "Quantity",
+        "type": "number"
+      },
+      "active_to": {
+        "displayOrder": 47,
+        "title": "Active transfer order",
+        "type": "boolean"
+      },
+      "acquisition_method": {
+        "displayOrder": 29,
+        "title": "Acquisition method",
+        "enum": [
+          "purchase",
+          "lease",
+          "rental",
+          "loan"
+        ],
+        "type": "string"
+      },
+      "ci": {
+        "displayOrder": 4,
+        "title": "Configuration Item",
+        "type": "string"
+      },
+      "sys_mod_count": {
+        "displayOrder": 56,
+        "title": "Updates",
+        "type": "number"
+      },
+      "serial_number": {
+        "displayOrder": 8,
+        "title": "Serial number",
+        "type": "string"
+      },
+      "old_substatus": {
+        "displayOrder": 9,
+        "title": "Old substatus",
+        "type": "string"
+      },
+      "sys_tags": {
+        "displayOrder": 57,
+        "title": "Sys tags",
+        "type": "string"
+      },
+      "support_group": {
+        "displayOrder": 44,
+        "title": "Support group",
+        "type": "string"
+      },
+      "order_date": {
+        "displayOrder": 69,
+        "title": "Ordered",
+        "type": "string",
+        "format": "date-time"
+      },
+      "reserved_for": {
+        "displayOrder": 18,
+        "title": "Reserved for",
+        "type": "string"
+      },
+      "due": {
+        "displayOrder": 70,
+        "title": "Due",
+        "type": "string",
+        "format": "date-time"
+      },
+      "location": {
+        "displayOrder": 15,
+        "title": "Location",
+        "type": "string"
+      },
+      "lease_id": {
+        "displayOrder": 42,
+        "title": "Lease contract",
+        "type": "string"
+      },
+      "salvage_value": {
+        "displayOrder": 38,
+        "title": "Salvage value",
+        "type": "string"
+      }
+    },
+    "title": "alm_asset"
+  },
+  "type": "array",
+  "title": "alm_asset"
+}

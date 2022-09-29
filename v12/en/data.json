@@ -51,7 +51,7 @@
             "topicList": 
 			[
                 {
-                    "title": "Slack Request node"
+                    "title": "ServiceNow Request node"
                 }
             ],
             "outcomesName": "Learning outcomes",
@@ -59,7 +59,7 @@
             "outcomeList": 
 			[
                 {
-                    "title": "Use IBM App Connect Enterprise to connect to ServiceNow and issue requests to send or retrieve messages, or to add, delete, or retrieve objects such as files, channels, users, and groups"
+                    "title": "Use IBM App Connect Enterprise to connect to ServiceNow and issue requests to create, retrieve, update, download, and delete objects such as assets, incidents, problems, and tickets"
                 }
             ],
             "summary": 
@@ -69,7 +69,7 @@
                 "sections": 
 				[
 					{
-						"section":"ServiceNow is a cloud-based platform that supports service management for all departments in your business including IT, human resources, facilities, and field services. This tutorial demonstrates how to develop and run a message flow that connects to ServiceNow and retrieves asset information. This tutorial requires access to ServiceNow. The tutorial provides a partially completed message flow and detailed steps describing the development process step-by-step. A summary of what you will do is provided here:"
+						"section":"ServiceNow is a cloud-based platform that supports service management for all departments in your business including IT, human resources, facilities, and field services. This tutorial demonstrates how to develop and run a message flow that connects to ServiceNow and retrieves asset information. This tutorial requires access to ServiceNow. The tutorial provides a partially completed message flow and detailed steps describing the development process step-by-step. A summary of what you will do is provided here:"						
 					},
 					{
                        "section":"1. Create a local integration server which has a vault for storing credentials"
@@ -214,18 +214,10 @@
 		}
 	  }, 
                             {
-                                 "details": "A new Configure connector node window will open. If you had previously connected to a ServiceNow system then a list of those connections would be displayed, but in this example the status of the ServiceNow connector is shown as <code>Not connected</code>. <strong>Before you use the ServiceNow Request node in a message flow as part of this tutorial, you will need to have access to ServiceNow. Underneath where the panel says <code>Not connected</code>, expand the section named <code>Assets</code> and choose the action <code>Retrieve assets</code>. The list of objects and actions will be replaced with a Connect button. Click the Connect button."
+                                 "details": "A new Configure connector node window will open. If you had previously connected to a ServiceNow system then a list of those connections would be displayed, but in this example the status of the ServiceNow connector is shown as <code>Not connected</code>. <strong>Before you use the ServiceNow Request node in a message flow as part of this tutorial, you will need to have access to ServiceNow. Underneath where the panel says <code>Not connected</code>, expand the section named <code>Asset</code> and choose the action <code>Retrieve assets</code>. The list of objects and actions will be replaced with a Connect button. Click the Connect button. A field named Authorization method will appear. Stick with the default option of <code>Provide a username, password and client credentials (OAUTH 2.0 PASSWORD)</code> and click Continue. Fill out the requested connection information for your ServiceNow account including the <code>Endpoint URL</code>, <code>Username</code>, <code>Password</code>, <code>Client ID</code> and <code>Client secret</code>. You may need to wait a few seconds for the connection to be made. If you would like you can add a condition to filter the assets to be returned, but to keep things as simple as possible we don't need such a Where clause; just change the <code>Maximum number of items to retrieve</code> from its initial setting of 10 down to 1, and change the radio button to <code>Process 1 item from the collection</code>."
 							},
 							{
-                                 "details": "You will need to specify the basic access token to be used to authenticate App Connect with your ServiceNow account. If you do not already have an access token, you can obtain one by following the instructions in the Slack connection details page of the App Connect documentation: https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-slack-connection-details"
-							},
-							{
-                                 "details": "Paste your access token in to the field and you will be asked <code>Where do you want to post the message?</code> which you can specify by selecting an entry from the enumerated dropdown which lists all the available channels."
-							},
-									
-								
-							{
-                                 "details": "At the top of the window click the Save button, and you should see a confirmation message briefly appear. Close the Configure connector window and return to the Toolkit. <strong>It is important to remember this step</strong> otherwise the vault will remain locked and you will be unable to start your integration server TEST_SERVER when you come to test the flow in the last section of the tutorial. You will now find that the properties of the ServiceNow Request node in the message flow have been updated. Save the message flow.  Explore the properties of the ServiceNow Request node. The Basic properties tab will now display a short description of <code>Send message</code>, along with the <strong>Action</strong> (<code>CREATE</code>) and the <strong>Object</strong> (<code>message</code>). On the Connection properties tab, the <strong>Policy</strong> will have been configured as <code>{ExamplePolicyProjectServiceNow}:ServiceNow1</code>."
+                                 "details": "At the top of the window click the Save button, and you should see a confirmation message briefly appear. Close the Configure connector window and return to the Toolkit. <strong>It is important to remember this step</strong> otherwise the vault will remain locked and you will be unable to start your integration server TEST_SERVER when you come to test the flow in the last section of the tutorial. You will now find that the properties of the ServiceNow Request node in the message flow have been updated. Save the message flow.  Explore the properties of the ServiceNow Request node. The Basic properties tab will now display a short description of <code>Retrieve assets</code>, along with the <strong>Action</strong> (<code>RETRIEVEALL</code>) and the <strong>Object</strong> (<code>alm_asset</code>). On the Connection properties tab, the <strong>Policy</strong> will have been configured as <code>{ExamplePolicyProjectServiceNow}:ServiceNow1</code>."
 							}							
 						  ]
 						}
@@ -259,7 +251,7 @@
                                         "details": "Return to <span class='resource'>ExampleServiceNowFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
                                         },
 										{
-                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from ServiceNow, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the ServiceNow Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the ServiceNow Request node to see the data which has been retrieved displaying assets."
+                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from ServiceNow, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the ServiceNow Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the ServiceNow Request node to see the data which has been retrieved displaying an asset."
 										}
                                         ]
                                     }
@@ -270,7 +262,7 @@
                                     "type": "ordered",
                                     "details": [                                      
                                         {
-											"details": "In order to reuse the completed application which is provided with this tutorial, you must configure your integration server with credentials for communicating with your ServiceNow service instance.  Launch a command console session, and run the following command to create these credentials:<br><code>mqsicredentials --work-dir &lt;YourToolkitWorkspace&gt;\\TEST_SERVER  --vault-key password123 --create --credential-type servicenow --credential-name CompletePolicyProjectServiceNow_ServiceNow1 --username &lt;YourServiceNowUsername&gt; --password &lt;YourServiceNowPassword&gt;</code>"
+											"details": "In order to reuse the completed application which is provided with this tutorial, you must configure your integration server with credentials for communicating with your ServiceNow service instance.  Launch a command console session, and run the following command to create these credentials:<br><code>mqsicredentials --work-dir &lt;YourToolkitWorkspace&gt;\\TEST_SERVER  --vault-key password123 --create --credential-type servicenow --credential-name CompletePolicyProjectServiceNow_ServiceNow1 --username &lt;YourServiceNowUsername&gt; --password &lt;YourServiceNowPassword&gt; --client-id &lt;YourServiceNowClientId&gt; --client-secret &lt;YourServiceNowClientSecret&gt;</code>"
 										},
 										{	
                                         "details": "Back in the Toolkit, in the Integration Explorer view, right-click <code>TEST_SERVER</code> and select the option to Start."
@@ -282,7 +274,7 @@
                                         "details": "Return to <span class='resource'>CompleteExampleServiceNowFlow.msgflow</span> and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start testing the flow."
 										},
 										{
-                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from ServiceNow, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the ServiceNow Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the ServiceNow Request node to see the data which has been retrieved displaying assets."
+                                            "details": "Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' />. Create a new test message to invoke the HTTP Input node. Any well-formed JSON will be fine, even something as simple as <code>{&quot;hello&quot;:&quot;world&quot;}</code>. Click Send and your message is sent to the HTTPInput node. You will receive a JSON reply message which is simply an echo of the same data which you sent in. You may also see a highlighted path through the flow. Sometimes there may be a short pause before the data is returned from ServiceNow, so you may need to click the View Path icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/viewPath.png' alt='View path' /> in the Flow Exerciser toolbar in order to see the highlighted path carry on past the ServiceNow Request node and into a Trace node at the end of the message flow. Click on the highlighted path coming out of the ServiceNow Request node to see the data which has been retrieved displaying an asset."
 										}
 									]
 								}
